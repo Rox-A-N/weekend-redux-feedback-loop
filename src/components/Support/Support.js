@@ -3,7 +3,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 
-// form for rating feelings
+// form for rating support
 function Support() {
   const history = useHistory();
   const routeToComments = () => {
