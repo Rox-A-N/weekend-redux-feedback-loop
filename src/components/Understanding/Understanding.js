@@ -15,9 +15,11 @@ function Understanding() {
 
       <h2>How well are you understanding the content?</h2>
       <p>(Where 5 = Perfect Understanding! and 0 = Lost)</p>
-      <label htmlFor="feeling">Understanding?</label>
-      <input type="number" min={0} max={5}/>
-      <button className='button' onClick={ routeToSupport }>NEXT</button>
+      <form>
+        <label htmlFor="feeling">Understanding?</label>
+        <input type="number" min={0} max={5}/>
+        <button className='button' onClick={ routeToSupport }>NEXT</button>
+      </form>
     
     </div>
   );
