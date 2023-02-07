@@ -13,10 +13,9 @@ import logger from 'redux-logger';
 // Reducers 
 // this will be data from DB, but I actually need to send info to db
 const  feelingsReducer= (state = '', action) => {
-    console.log('in feelingRank reducer');
+    // console.log('in feelingRank reducer');
     // payload will be the data from the db
     if(action.type === 'SET_FEELINGS'){
-        console.log('SET_FEELINGS');
       return state + action.payload;
     }
     if (action.type === 'CLEAR_INPUTS') {
@@ -25,15 +24,47 @@ const  feelingsReducer= (state = '', action) => {
     return state;
   }
 
+// Understanding Reducer
+const understandingReducer = (state = '', action) => {
+    if (action.type === 'SET_UNDERSTANDING') {
+        // console.log('in Understanding Reducer');
+        return state + action.payload;
+    }
+    if (action.type === 'CLEAR_INPUTS') {
+        return (state = '');     
+    }
+    return state;
+}
+
+// Support Reducer
+const supportReducer = (state = '', action) => {
+    console.log('in supportReducer');
+    if (action.type === 'SET_SUPPORT') {
+        return state + action.payload;
+    }
+    if (action.type === 'CLEAR_INPUTS') {
+        return (state = '');
+    }
+    return state;
+}
+
+// Comments Reducer
+const commentsReducer = (state = '', action) => {
+    console.log('in commentsReducer');
+
+    return state;
+}
+
 // Store
 const storeInstance = createStore(
     // pass reducers here
     combineReducers(
         {
             feelingsReducer,
-            // understandingReducer,
-            // supportedReducer,
-            // commentsReducer
+            understandingReducer,
+            supportReducer,
+            commentsReducer
+            
         }
         ),
         applyMiddleware(

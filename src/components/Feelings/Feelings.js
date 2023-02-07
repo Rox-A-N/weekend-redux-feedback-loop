@@ -10,7 +10,7 @@ function Feelings() {
   const dispatch = useDispatch();
   const [feeling, setFeeling] = useState( '' );
 
-//   const feelingsReducer = useSelector((store) => store.feelingsReducer)
+  const feelingsReducer = useSelector((store) => store.feelingsReducer)
 
   const handleChange = (event) => {
     dispatch({
@@ -25,7 +25,7 @@ function Feelings() {
    
     if (feeling === '') {
         console.log('please add a number!');
-            alert('Please input your response.')
+            alert('Please rate your feelings.')
             return;
             
         } 
@@ -41,8 +41,10 @@ function Feelings() {
   }
   
   const routeToFeedback = () => {
+    // alert('Please input your response.')
     history.push('/feedback');
   }
+
   return (
     <div>
 
