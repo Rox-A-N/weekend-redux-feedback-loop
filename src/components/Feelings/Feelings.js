@@ -41,7 +41,6 @@ function Feelings() {
   }
   
   const routeToFeedback = () => {
-    // alert('Please input your response.')
     history.push('/feedback');
   }
 
