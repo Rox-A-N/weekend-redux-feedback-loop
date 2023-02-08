@@ -14,7 +14,7 @@ function Feelings() {
 
   const handleChange = (event) => {
     dispatch({
-        type: 'SET_FEELING',
+        type: 'SET_FEELINGS',
         payload: feeling
     });
   };

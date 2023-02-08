@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 // answers from each previous page
 function Feedback() {
     // console.log('inside the Feedback page'); // test console.log
+
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -41,15 +42,12 @@ function Feedback() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Review of submitted answers.');
+
         bundleAndPost();
         history.push('/submitted');
     }
     
     
-    const routeToSubmitted = () => {
-        history.push('/submitted');
-    }
 
     return (
         <div>

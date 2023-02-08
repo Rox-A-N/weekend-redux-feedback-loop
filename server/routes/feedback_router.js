@@ -18,12 +18,12 @@ router.post('/', (req, res) => {
         feedback.support, 
         feedback.comments
     ])
-    .then((result) => {
-        console.log('result', result);
+    .then((res) => {
+        console.log('result', res);
         res.sendStatus(201);
     })
     .catch((error) => {
-        console.log('Error in POST:', error);
+        console.log('Error in INSERT:', error);
         res.sendStatus(500); 
     })
 });
