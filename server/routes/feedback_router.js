@@ -18,8 +18,8 @@ router.post('/', (req, res) => {
         feedback.support, 
         feedback.comments
     ])
-    .then((res) => {
-        console.log('result', res);
+    .then((results) => {
+        console.log('result', results);
         res.sendStatus(201);
     })
     .catch((error) => {

@@ -18,17 +18,17 @@ function Feedback() {
     const commentsReducer = useSelector((store) => store.commentsReducer);
 
     // created for understandability in the return
-    const Review = {
-        feeling: feelingsReducer,
-        understanding: understandingReducer,
-        support: supportReducer,
-        comment: commentsReducer
-    };
-
+    
     // bundle and POST to db
     const bundleAndPost = () => {
-        console.log('Review:', Review);
-        axios.post('/router', Review)
+        const review = {
+            feeling: feelingsReducer,
+            understanding: understandingReducer,
+            support: supportReducer,
+            comments: commentsReducer
+        };
+        console.log('review:', review);
+        axios.post('/feedback', review)
         .then((res) => {
             console.log('response', res);
             alert('Responses Submitted');
@@ -53,10 +53,10 @@ function Feedback() {
         <div>
 
             <h2>Your Responses:</h2>
-            <p>Feeling: {Review.feeling}</p>
-            <p>Understanding: {Review.understanding}</p>
-            <p>Support: {Review.support}</p>
-            <p>Comments: {Review.comment}</p>
+            <p>Feeling: {feelingsReducer}</p>
+            <p>Understanding: {understandingReducer}</p>
+            <p>Support: {supportReducer}</p>
+            <p>Comments: {commentsReducer}</p>
            
 
             <button className='button' onClick={ handleSubmit }>Submit Feedback</button>
