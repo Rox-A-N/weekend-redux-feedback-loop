@@ -10,11 +10,9 @@ import logger from 'redux-logger';
 
 
 
-// Reducers 
-// this will be data from DB, but I actually need to send info to db
+// Reducers- console.logs for testing
 const  feelingsReducer= (state = '', action) => {
     // console.log('in feelingRank reducer');
-    // payload will be the data from the db
     if(action.type === 'SET_FEELINGS'){
       return state + action.payload;
     }
@@ -38,7 +36,7 @@ const understandingReducer = (state = '', action) => {
 
 // Support Reducer
 const supportReducer = (state = '', action) => {
-    console.log('in supportReducer');
+    // console.log('in supportReducer');
     if (action.type === 'SET_SUPPORT') {
         return state + action.payload;
     }
@@ -50,8 +48,13 @@ const supportReducer = (state = '', action) => {
 
 // Comments Reducer
 const commentsReducer = (state = '', action) => {
-    console.log('in commentsReducer');
-
+    // console.log('in commentsReducer');
+    if (action.type === 'SET_COMMENT') {
+        return state + action.payload;
+    }
+    if (action.type === 'CLEAR_INPUTS') {
+        return (state = '');
+    }
     return state;
 }
 
